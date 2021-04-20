@@ -4,15 +4,10 @@ import numpy as np
 import math
 import pandas as pd
 
-# ticker list
-data_ticker = pd.read_csv('copartnership_data.csv', sep=';')
-data = pd.read_csv('dane.csv', sep=';')
-df = data[['Unnamed: 0', 'Data sesji', 'Close']]
-b = df.copy()
-b.loc[:, ('Close')] = df['Close'].transform(lambda x: x.replace(" ", "").replace(",", ".")).astype(float, errors='raise')
-B = b[df["Unnamed: 0"].str.contains('11B', case=False)]
+# import data
+data = pd.read_csv('CDR_predict.csv', sep=';')
 
-ticker = B['Close']
+ticker = data['close']
 for i in range(1):
     # df = ohf.database_connection(i)
     df = ticker
