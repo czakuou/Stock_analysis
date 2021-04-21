@@ -25,7 +25,21 @@ model.add(LSTM(128, return_sequences=True, input_shape= (x_train.shape[1], 1)))
 model.add(LSTM(64, return_sequences=False))
 model.add(Dense(25))
 model.add(Dense(1))
+
+optimizer='nadam', loss='mean_squared_error'
 ```
 I've tested some gradient optimizations like Adam, Nadam and RMSprop Using Adam model was overfitting the data RMSE == 83,3 predictions was really bad. Nadam and RMSprop are almost identical, but Nadam is slighty better in this case.
 
 For more detail please open `eda_olhd.ipynb`
+## Result Analysis
+The predictions from the model wasn't good, the 
+```
+Root Mean Square Error = 34.046665
+```
+I've tested the real and predicted stocks prices of CD Projekt Red from last 100 days with Avellaneda Toikov model.
+## Real Stock Prices
+![](/images/CDR_micro_real_data_inv.png)
+![](/images/CDR_micro_real_data.png)
+## Predicted Stock Prices
+![](/images/CDR_micro_predicted_inventory.png)
+![](/images/CDR_micro_predicted.png)
