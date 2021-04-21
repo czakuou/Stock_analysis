@@ -45,6 +45,7 @@ I've tested the real and predicted stocks prices of CD Projekt Red from last 100
 ![](/images/CDR_micro_predicted.png)
 
 We can see that in both cases, model turned out to be on a plus from the action. The returns on predicted stocks are higher, but that becouse the predicted prices was much higher then the real one, at the beggining.
+
 ![](/real_pred_price.png)
 ## Next Steps
 The next steps of this experiment:
